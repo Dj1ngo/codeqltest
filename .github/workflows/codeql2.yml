@@ -3,25 +3,13 @@ name: "CodeQL"
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
+    paths-ignore:
+      - "doc/**"
   schedule:
     - cron: '0 0 * * 0'
-
-
-on:
-  push:
-    branches: [ master ]
-    paths-ignore:
-      - "doc/**"
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ master ]
-    paths-ignore:
-      - "doc/**"
-  schedule:
-    - cron: '18 21 * * 1'
 
 permissions: read-all
 
